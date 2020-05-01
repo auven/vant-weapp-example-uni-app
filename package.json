@@ -40,13 +40,17 @@
     "@dcloudio/uni-quickapp-light": "^2.0.0-26920200424005",
     "@dcloudio/uni-quickapp-vue": "^2.0.0-26920200424005",
     "@dcloudio/uni-stat": "^2.0.0-26920200424005",
+    "@vant/weapp": "^1.2.2",
     "core-js": "^3.6.4",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
+    "shvl": "^2.0.0",
     "vue": "^2.6.11",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@dcloudio/uni-cli-shared": "^2.0.0-26920200424005",
     "@dcloudio/uni-migration": "^2.0.0-26920200424005",
     "@dcloudio/uni-template-compiler": "^2.0.0-26920200424005",
@@ -61,6 +65,8 @@
     "@vue/cli-service": "~4.3.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "^3.1.0",
+    "husky": "^4.2.5",
     "mini-types": "*",
     "miniprogram-api-typings": "^2.8.0-2",
     "postcss-comment": "^2.0.0",
@@ -72,5 +78,15 @@
   ],
   "uni-app": {
     "scripts": {}
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
