@@ -26,6 +26,22 @@
       </view>
     </demo-block>
 
+    <demo-block title="嵌套在 scroll-view 内使用">
+      <scroll-view
+        @scroll="onScroll"
+        scroll-y
+        id="scroller"
+        style="height: 200px; background-color: #fff;"
+      >
+        <view style="height: 400px; padding-top: 50px;">
+          <van-sticky :scroll-top="scrollTop" :offset-top="offsetTop">
+            <van-button type="warning">
+              嵌套在 scroll-view 内
+            </van-button>
+          </van-sticky>
+        </view>
+      </scroll-view>
+    </demo-block>
   </div>
 </template>
 
@@ -33,11 +49,24 @@
 export default {
   data() {
     return {
-      container: null
+      container: null,
+      scrollTop: 0,
+      offsetTop: 0,
     }
   },
   onReady() {
     this.container = () => wx.createSelectorQuery().select('#container')
+  },
+  methods: {
+    onScroll(event) {
+      wx.createSelectorQuery()
+        .select('#scroller')
+        .boundingClientRect((res) => {
+          this.scrollTop = event.detail.scrollTop
+          this.offsetTop = res.top
+        })
+        .exec()
+    }
   }
 }
 </script>

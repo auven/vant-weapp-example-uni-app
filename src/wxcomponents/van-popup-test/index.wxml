@@ -1,0 +1,35 @@
+<view>
+  <van-cell title="事件名 kebab-case 写法" is-link bind:click="showPopup" />
+
+  <van-popup
+    show="{{ show }}"
+    round
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="onClose"
+    bind:click-overlay="onClickOverlay"
+    bind:before-enter="onBeforeEnter"
+    bind:enter="onEnter"
+    bind:after-enter="onAfterEnter"
+    bind:before-leave="onBeforeLeave"
+    bind:leave="onLeave"
+    bind:after-leave="onAfterLeave"
+  />
+
+  <van-cell title="事件名 PascalCase 写法" is-link bind:click="showPopup1" />
+
+  <van-popup
+    show="{{ show1 }}"
+    round
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="onClose1"
+    bind:clickOverlay="onClickOverlay"
+    bind:beforeEnter="onBeforeEnter"
+    bind:enter="onEnter"
+    bind:afterEnter="onAfterEnter"
+    bind:beforeLeave="onBeforeLeave"
+    bind:leave="onLeave"
+    bind:afterLeave="onAfterLeave"
+  />
+</view>

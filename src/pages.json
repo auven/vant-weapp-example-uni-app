@@ -303,6 +303,12 @@
       "style": {
         "navigationBarTitleText": "GoodsAction 商品导航"
       }
+    },
+    {
+      "path": "pages/test-van-popup/index",
+      "style": {
+        "navigationBarTitleText": "测试组件里的 van-popup"
+      }
     }
   ],
   "globalStyle": {
@@ -371,10 +377,13 @@
       "van-index-anchor": "/wxcomponents/@vant/weapp/index-anchor/index",
       "van-grid": "/wxcomponents/@vant/weapp/grid/index",
       "van-grid-item": "/wxcomponents/@vant/weapp/grid-item/index",
-      "van-dropdown-menu": "/wxcomponents/@vant/weapp/dropdown-menu/index",
-      "van-dropdown-item": "/wxcomponents/@vant/weapp/dropdown-item/index",
+      // "van-dropdown-menu": "/wxcomponents/@vant/weapp/dropdown-menu/index",
+      // "van-dropdown-item": "/wxcomponents/@vant/weapp/dropdown-item/index",
+      "van-dropdown-menu": "/wxcomponents/@vant/weapp-fix/dropdown-menu/index",
+      "van-dropdown-item": "/wxcomponents/@vant/weapp-fix/dropdown-item/index",
       "van-skeleton": "/wxcomponents/@vant/weapp/skeleton/index",
-      "van-calendar": "/wxcomponents/@vant/weapp/calendar/index"
+      "van-calendar": "/wxcomponents/@vant/weapp/calendar/index",
+      "van-popup-test": "/wxcomponents/van-popup-test/index"
     }
   }
 }

@@ -1,20 +1,16 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const fs = require('fs-extra')
 const vantWeapp = require('./vant-weapp')
 const _ = require('../util')
 
 const formatPath = package => {
   if (!package.packages || !package.packages.length) {
-    return [{
-      from: _.resolve(package.from),
-      to: _.resolve(package.to)
-    }]
+    return [() => fs.copy(_.resolve(package.from), _.resolve(package.to))]
   }
   return package.packages.map(item => {
-    return {
-      from: _.resolve(package.from + item),
-      to: _.resolve(package.to + item)
-    }
+    return () => fs.copy(_.resolve(package.from + item), _.resolve(package.to + item))
   })
 }
 
-module.exports = new CopyWebpackPlugin([...formatPath(vantWeapp)], {})
+exports.copyArr = [...formatPath(vantWeapp)]
+
+exports.toPath = [_.resolve(vantWeapp.to)]

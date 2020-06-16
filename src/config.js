@@ -1,5 +1,15 @@
 export default [
   {
+    groupName: '测试',
+    icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
+    list: [
+      {
+        path: '/test-van-popup',
+        title: 'uni-app 里使用 van-popup 出现的 bug'
+      }
+    ]
+  },
+  {
     groupName: '基础组件',
     icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
     list: [

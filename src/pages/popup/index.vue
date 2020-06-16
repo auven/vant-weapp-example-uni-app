@@ -84,6 +84,8 @@
         position="bottom"
         custom-style="height: 20%"
         @close="hideRound"
+        @leave="onLeave"
+        @after-leave="onAfterLeave"
       />
     </demo-block>
   </div>
@@ -182,6 +184,14 @@ export default {
 
     hideCustomIconPosition() {
       this.toggle('customIconPosition', false);
+    },
+
+    onLeave() {
+      console.log('onLeave')
+    },
+
+    onAfterLeave() {
+      console.log('onAfterLeave')
     }
   }
 }

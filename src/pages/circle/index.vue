@@ -1,7 +1,7 @@
 <template>
   <div>
     <demo-block title="基础用法">
-      <van-circle :value="value" :text="`${value}%`" />
+      <van-circle type="2d" :value="value" :text="`${value}%`" />
     </demo-block>
 
     <demo-block title="样式定制">

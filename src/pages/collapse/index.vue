@@ -16,8 +16,16 @@
       </van-collapse>
     </demo-block>
 
+    <demo-block title="事件监听">
+      <van-collapse :value="active3" data-key="active3" @change="onChange" @open="onOpen" @close="onClose">
+        <van-collapse-item :title="title1">{{ content1 }}</van-collapse-item>
+        <van-collapse-item :title="title2">{{ content2 }}</van-collapse-item>
+        <van-collapse-item :title="title3">{{ content3 }}</van-collapse-item>
+      </van-collapse>
+    </demo-block>
+
     <demo-block title="自定义标题内容">
-      <van-collapse :value="active3" data-key="active3" @change="onChange">
+      <van-collapse :value="active4" data-key="active4" @change="onChange">
         <van-collapse-item>
           <view slot="title">
             {{ title1 }}
@@ -35,16 +43,19 @@
       </van-collapse>
     </demo-block>
 
+    <van-toast id="van-toast" />
   </div>
 </template>
 
 <script>
+import Toast from '@vant/weapp/dist/toast/toast'
 export default {
   data() {
     return {
       active1: [0],
       active2: 0,
       active3: [],
+      active4: [],
       title1: '有赞微商城',
       title2: '有赞零售',
       title3: '有赞美业',
@@ -57,6 +68,14 @@ export default {
     onChange(event) {
       const { key } = event.currentTarget.dataset;
       this[key] = event.detail
+    },
+
+    onOpen(event) {
+      Toast(`展开: ${event.detail}`)
+    },
+
+    onClose(event) {
+      Toast(`关闭: ${event.detail}`)
     }
   }
 }

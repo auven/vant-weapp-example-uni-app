@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-popup": "../../weapp/popup/index",
+    "van-cell": "../../weapp/cell/index",
+    "van-icon": "../../weapp/icon/index"
+  }
+}
