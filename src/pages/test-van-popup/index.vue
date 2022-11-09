@@ -26,13 +26,13 @@
         position="bottom"
         custom-style="height: 20%"
         @close="show1 = false"
-        @click-overlay="onClickOverlay"
-        @before-enter="onBeforeEnter"
+        @clickOverlay="onClickOverlay"
+        @beforeEnter="onBeforeEnter"
         @enter="onEnter"
-        @after-enter="onAfterEnter"
-        @before-leave="onBeforeLeave"
+        @afterEnter="onAfterEnter"
+        @beforeLeave="onBeforeLeave"
         @leave="onLeave"
-        @after-leave="onAfterLeave"
+        @afterLeave="onAfterLeave"
       />
     </demo-block>
 
